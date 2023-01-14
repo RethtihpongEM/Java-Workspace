@@ -1,6 +1,23 @@
 import java.util.Scanner;
-import mypack.Arithmetic;
 public class Main {
+    static int sum(int a, int b){
+        return a+b;
+    }
+    static double divide(int a, int b){
+        return a/b;
+    }
+
+    static int minus(int a, int b){
+        return a-b;
+    }
+
+    static int multiply(int a, int b){
+        return a*b;
+    }
+
+    static int modulo(int a, int b){
+        return a%b;
+    }
     public static void main(String[] args) {
 
         int a, b;
@@ -13,12 +30,10 @@ public class Main {
         System.out.print("Enter b: ");
         b = input.nextInt();
 
-        Arithmetic obj = new Arithmetic();
-
-        System.out.println("Sum: "+obj.sum(a,b));
-        System.out.println("Divide: "+obj.divide(a,b));
-        System.out.println("Minus: "+obj.minus(a,b));
-        System.out.println("Multiply: "+obj.multiply(a,b));
-        System.out.println("Modulo: "+obj.modulo(a,b));
+        System.out.println("Sum: "+sum(a,b));
+        System.out.println("Divide: "+divide(a,b));
+        System.out.println("Minus: "+minus(a,b));
+        System.out.println("Multiply: "+multiply(a,b));
+        System.out.println("Modulo: "+modulo(a,b));
     }
 }
