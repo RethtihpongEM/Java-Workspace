@@ -1,4 +1,4 @@
-class Math1{
+class MathI{
   static int add(int a, int b){
     return a+b;
   }
@@ -29,12 +29,12 @@ class Math1{
 }
 public class Lab3_5_EmOrmrethRethtihpong {
   public static void main(String[] args) {
-    System.out.println("Result of a + b: " + Math1.add(3,4));
-    System.out.println("Result of a - b: " + Math1.subtract(4,3));
-    System.out.println("Result of a * b: " + Math1.multiply(5,2));
-    System.out.println("Result of a / b: " + Math1.divide(5,2));
-    System.out.println("Min between a and b is: " + Math1.min(7,2));
-    System.out.println("Max between a and b is: " + Math1.max(7,2));
+    System.out.println("Result of a + b: " + MathI.add(3,4));
+    System.out.println("Result of a - b: " + MathI.subtract(4,3));
+    System.out.println("Result of a * b: " + MathI.multiply(5,2));
+    System.out.println("Result of a / b: " + MathI.divide(5,2));
+    System.out.println("Min between a and b is: " + MathI.min(7,2));
+    System.out.println("Max between a and b is: " + MathI.max(7,2));
 
   }
 }
