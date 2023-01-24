@@ -23,7 +23,7 @@ public class Lab3_2_EmOrmrethRethtihpong {
         }
       }
     }
-    float average = sum/SIZE;
+    float average = ((float)sum/SIZE);
     System.out.println();
     System.out.println("Max: " + arrNum[SIZE-1]);
     System.out.println("Min: " + arrNum[0]);
