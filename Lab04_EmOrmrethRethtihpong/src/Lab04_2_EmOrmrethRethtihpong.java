@@ -21,6 +21,16 @@ public class Lab04_2_EmOrmrethRethtihpong {
     System.out.println("4. Quit");
     System.out.print("Choose an option: ");
   }
+  static void displayHeader(){
+    System.out.println();
+    System.out.println("===========================================");
+    System.out.println("| No  | ID    | Name\t\t\t\t| Age |");
+    System.out.println("==========================================");
+  }
+  static void displayFooter(){
+    System.out.println("==========================================");
+  }
+
   public static void main(String[] args) {
     int counter = 0;
     int inputNum;
@@ -28,6 +38,7 @@ public class Lab04_2_EmOrmrethRethtihpong {
     Scanner input = new Scanner(System.in);
     Student2[] studArr = new Student2[100];
     do {
+      Student2 student2 = new Student2();
       mainMenu();
       inputNum = input.nextInt();
       switch (inputNum){
@@ -36,24 +47,20 @@ public class Lab04_2_EmOrmrethRethtihpong {
             System.out.println("List is empty...");
             break;
           }else{
-            System.out.println();
-            System.out.println("===========================================");
-            System.out.println("| No  | ID    | Name\t\t\t\t| Age |");
-            System.out.println("==========================================");
+            displayHeader();
             for (int i=0;i<counter;i++){
               studArr[i].display(i);
             }
-            System.out.println("==========================================");
+            displayFooter();
           }
           break;
         case 2:
           checkID = false;
-          Student2 stud = new Student2();
           System.out.print("Input ID: ");
-          stud.id = input.nextInt();
+          student2.id = input.nextInt();
           if (counter>0){
             for (int i=0;i<counter;i++){
-              if (stud.id == studArr[i].id){
+              if (student2.id == studArr[i].id){
                 checkID = true;
               }
             }
@@ -63,38 +70,35 @@ public class Lab04_2_EmOrmrethRethtihpong {
             break;
           }else{
             System.out.print("Name: ");
-            stud.name = input.next();
+            student2.name = input.next();
             System.out.print("Age: ");
-            stud.age = input.nextInt();
-            stud.setValue(stud.id, stud.name, stud.age);
-            studArr[counter] = stud;
+            student2.age = input.nextInt();
+            student2.setValue(student2.id, student2.name, student2.age);
+            studArr[counter] = student2;
             counter++;
           }
           break;
         case 3:
           checkID = false;
-          Student2 student2 = new Student2();
           System.out.print("Input ID: ");
           student2.id = input.nextInt();
           int j;
           for (j=0;j<counter;j++){
             if (student2.id == studArr[j].id){
-              System.out.println("Student has been deleted..");
-              System.out.println();
-              System.out.println("===========================================");
-              System.out.println("| No  | ID    | Name\t\t\t\t| Age |");
-              System.out.println("==========================================");
-              studArr[j].display(j);
-              System.out.println("==========================================");
-              for (int i = j;i<counter;i++){
-                studArr[i] = studArr[i+1];
-              }
               checkID = true;
-              counter--;
               break;
             }
           }
-          if (!checkID){
+          if (checkID){
+            System.out.println("Student has been deleted..");
+            displayHeader();
+            studArr[j].display(j);
+            displayFooter();
+            for (int i = j;i<counter;i++){
+              studArr[i] = studArr[i+1];
+              counter--;
+            }
+          }else {
             System.out.println("Student not found! Try again");
           }
           break;
