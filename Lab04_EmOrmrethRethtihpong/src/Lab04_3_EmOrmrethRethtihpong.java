@@ -127,6 +127,8 @@ public class Lab04_3_EmOrmrethRethtihpong {
               break;
             }
           }while (true);
+        case 4:
+          System.exit(0);
       }
     }while (true);
   }

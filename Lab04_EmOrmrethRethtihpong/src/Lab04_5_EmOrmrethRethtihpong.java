@@ -109,6 +109,8 @@ public class Lab04_5_EmOrmrethRethtihpong {
           album.genre = input.nextLine();
           album.setValue(album.albumName, album.genre);
           albumArr.add(album);
+        case 4:
+          System.exit(0);
       }
     }while (true);
   }
