@@ -48,6 +48,31 @@ public class Lab05_1_EmOrmrethRethtihpong {
     System.out.print("Choose an option: ");
   }
 
+  static void saveToFile(String fileName,String firstName, String lastName, String sex, String email, String subject, float salary) throws Exception{
+    FileWriter filewriter = new FileWriter(fileName, true);
+    PrintWriter printWriter = new PrintWriter(filewriter);
+    printWriter.println(firstName);
+    printWriter.println(lastName);
+    printWriter.println(sex);
+    printWriter.println(email);
+    printWriter.println(subject);
+    printWriter.println(salary);
+    printWriter.println();
+    printWriter.close();
+    filewriter.close();
+  }
+  static void readFromFile(String fileName) throws Exception{
+    Scanner scanner = new Scanner(new File(fileName));
+    System.out.println("=== " + fileName + " ===");
+    while (scanner.hasNextLine()){
+      String line = scanner.nextLine();
+      if (line.isEmpty()){
+        System.out.println();
+      }else{
+      System.out.print("[" + line + "]");
+      }
+    }
+  }
   static void addNew() throws Exception{
     Scanner scanf = new Scanner(System.in);
     addNewMenu();
@@ -57,30 +82,20 @@ public class Lab05_1_EmOrmrethRethtihpong {
     switch (inputInt){
       case 1:
         Teacher teacher = new Teacher();
-        FileWriter filewriter = new FileWriter("teacher.txt", true);
-        PrintWriter printWriter = new PrintWriter(filewriter);
         System.out.print("First name: ");
         scanf.nextLine();
         teacher.firstName = scanf.nextLine();
-        printWriter.println(teacher.firstName);
         System.out.print("Last name: ");
         teacher.lastName = scanf.nextLine();
-        printWriter.println(teacher.lastName);
         System.out.print("Sex: ");
         teacher.sex = scanf.nextLine();
-        printWriter.println(teacher.sex);
         System.out.print("Email: ");
         teacher.email = scanf.nextLine();
-        printWriter.println(teacher.email);
         System.out.print("Subject: ");
         teacher.subject = scanf.nextLine();
-        printWriter.println(teacher.subject);
         System.out.print("Salary: ");
         teacher.salary = scanf.nextFloat();
-        printWriter.println(teacher.salary);
-        printWriter.println();
-        printWriter.close();
-        filewriter.close();
+        saveToFile("teacher.txt", teacher.firstName, teacher.lastName, teacher.sex, teacher.email, teacher.subject, teacher.salary);
     }
   }
 
@@ -92,10 +107,11 @@ public class Lab05_1_EmOrmrethRethtihpong {
       inputInt = scanf.nextInt();
       switch (inputInt){
         case 1:
-          addNew();
+          readFromFile("teacher.txt");
           break;
         case 2:
           do {
+            addNew();
           }while (askIfContinue("continue"));
           break;
         case 3:
