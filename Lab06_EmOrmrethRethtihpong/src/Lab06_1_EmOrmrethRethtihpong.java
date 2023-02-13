@@ -32,20 +32,19 @@ class MATH extends AbstractMath{
     return (int)(num);
   }
   int countDistinct(int[] values){
-    int count=1;
-    for(int i=1;i<values.length;i++){
-      int j = 0;
-      for( j=0;j<i;j++){
+    int count=0;
+    for(int i=0;i<values.length;i++){
+      int j;
+      for (j=0;j< values.length;j++){
         if (values[i] == values[j]){
           break;
-        }else{
-          continue;
         }
       }
-      if(i==j){
+      if(j==i){
         count++;
       }
     }
+
     return count;
   }
   int decimalToBinary(int decimal){
