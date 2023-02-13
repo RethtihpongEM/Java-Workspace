@@ -151,6 +151,8 @@ class SingleThread extends Matrix{
           singleThread.multiply();
           singleThread.displayMatrix();
           break;
+        case 4:
+          System.exit(0);
         default:
           System.out.println("Invalid input...");
       }
