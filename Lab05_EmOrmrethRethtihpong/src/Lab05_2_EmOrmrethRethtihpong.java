@@ -14,10 +14,10 @@ class Student{
   public void setAge(int age) {
     this.age = age;
   }
-
   public int getId(){
     return id;
   }
+
   public void displayStudent(int i){
     System.out.printf("| %-4d | %-4d | %-30s | %-4d |\n", (i+1),id,name,age);
   }
@@ -37,11 +37,6 @@ public class Lab05_2_EmOrmrethRethtihpong {
     String input = scanner.next();
     input = input.toLowerCase();
     return input.equals("y") || input.equals("yes");
-  }
-  static boolean searchStudentByID(int id, int size, int value){
-    for(int i=0;i<size;i++){
-
-    }
   }
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
@@ -69,9 +64,14 @@ public class Lab05_2_EmOrmrethRethtihpong {
           }while (askIfContinue());
           break;
         case 2:
-          for(int i=0;i<studentArrayList.size();i++){
-            studentArrayList.get(i).displayStudent(i);
-          }
+
+          break;
+        case 3:
+          System.exit(0);
+          break;
+        default:
+          System.out.println("Invalid input....");
+          break;
       }
     }while (true);
   }
