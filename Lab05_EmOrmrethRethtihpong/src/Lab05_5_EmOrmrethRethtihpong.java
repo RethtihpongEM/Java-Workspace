@@ -11,18 +11,15 @@ class Teacher extends Human{
   String subject;
   float salary;
   Human human = new Human();
-  void setValue(String firstName, String lastName, String sex, String email, String subject, float salary)
-  {
-    human.firstName = firstName;
-    human.lastName = lastName;
-    human.sex = sex;
-    human.email = email;
-    this.subject = subject;
-    this.salary = salary;
-  }
-  void display(int i){
-    System.out.printf("%d [%-20s] [%-20s] [%-4s] [%-30s] [%-30s] [%-8f]\n",(i+1), human.firstName,human.lastName, human.sex, human.email, subject, salary);
-  }
+}
+class Students extends Human{
+  String major;
+  int year;
+  Human human = new Human();
+}
+class SecurityGuard extends Human{
+  String place;
+  Human human = new Human();
 }
 public class Lab05_5_EmOrmrethRethtihpong {
   static void mainMenu(){
@@ -48,7 +45,7 @@ public class Lab05_5_EmOrmrethRethtihpong {
     System.out.print("Choose an option: ");
   }
 
-  static void saveToFile(String fileName,String firstName, String lastName, String sex, String email, String subject, float salary) throws Exception{
+  static void saveToTeacherFile(String fileName,String firstName, String lastName, String sex, String email, String subject, float salary) throws Exception{
     FileWriter filewriter = new FileWriter(fileName, true);
     PrintWriter printWriter = new PrintWriter(filewriter);
     printWriter.println(firstName);
@@ -61,9 +58,36 @@ public class Lab05_5_EmOrmrethRethtihpong {
     printWriter.close();
     filewriter.close();
   }
+
+  static void saveToStudentFile(String fileName,String firstName, String lastName, String sex, String email, String major, int year) throws Exception{
+    FileWriter filewriter = new FileWriter(fileName, true);
+    PrintWriter printWriter = new PrintWriter(filewriter);
+    printWriter.println(firstName);
+    printWriter.println(lastName);
+    printWriter.println(sex);
+    printWriter.println(email);
+    printWriter.println(year);
+    printWriter.println(major);
+    printWriter.println();
+    printWriter.close();
+    filewriter.close();
+  }
+  static void saveToSecurityFile(String fileName,String firstName, String lastName, String sex, String email, String place) throws Exception{
+    FileWriter filewriter = new FileWriter(fileName, true);
+    PrintWriter printWriter = new PrintWriter(filewriter);
+    printWriter.println(firstName);
+    printWriter.println(lastName);
+    printWriter.println(sex);
+    printWriter.println(email);
+    printWriter.println(place);
+    printWriter.println();
+    printWriter.close();
+    filewriter.close();
+  }
   static void readFromFile(String fileName) throws Exception{
     Scanner scanner = new Scanner(new File(fileName));
-    System.out.println("=== " + fileName + " ===");
+    String file = fileName.toUpperCase();
+    System.out.println("==== " + file + " ====");
     while (scanner.hasNextLine()){
       String line = scanner.nextLine();
       if (line.isEmpty()){
@@ -95,7 +119,41 @@ public class Lab05_5_EmOrmrethRethtihpong {
         teacher.subject = scanf.nextLine();
         System.out.print("Salary: ");
         teacher.salary = scanf.nextFloat();
-        saveToFile("teacher.txt", teacher.firstName, teacher.lastName, teacher.sex, teacher.email, teacher.subject, teacher.salary);
+        saveToTeacherFile("teacher.txt", teacher.firstName, teacher.lastName, teacher.sex, teacher.email, teacher.subject, teacher.salary);
+        break;
+      case 2:
+        Students students = new Students();
+        System.out.print("First name: ");
+        scanf.nextLine();
+        students.firstName = scanf.nextLine();
+        System.out.print("Last name: ");
+        students.lastName = scanf.nextLine();
+        System.out.print("Sex: ");
+        students.sex = scanf.nextLine();
+        System.out.print("Email: ");
+        students.email = scanf.nextLine();
+        System.out.print("Year: ");
+        students.year = scanf.nextInt();
+        System.out.print("Salary: ");
+        scanf.nextLine();
+        students.major = scanf.nextLine();
+        saveToStudentFile("student.txt",students.firstName, students.lastName, students.sex, students.email, students.major, students.year);
+        break;
+      case 3:
+        SecurityGuard securityGuard = new SecurityGuard();
+        System.out.print("First name: ");
+        scanf.nextLine();
+        securityGuard.firstName = scanf.nextLine();
+        System.out.print("Last name: ");
+        securityGuard.lastName = scanf.nextLine();
+        System.out.print("Sex: ");
+        securityGuard.sex = scanf.nextLine();
+        System.out.print("Email: ");
+        securityGuard.email = scanf.nextLine();
+        System.out.print("Position: ");
+        securityGuard.place= scanf.nextLine();
+        saveToSecurityFile("securityguard.txt", securityGuard.firstName, securityGuard.lastName, securityGuard.sex, securityGuard.email, securityGuard.place);
+        break;
     }
   }
 
@@ -108,6 +166,10 @@ public class Lab05_5_EmOrmrethRethtihpong {
       switch (inputInt){
         case 1:
           readFromFile("teacher.txt");
+          System.out.println();
+          readFromFile("student.txt");
+          System.out.println();
+          readFromFile("securityguard.txt");
           break;
         case 2:
           do {
@@ -119,7 +181,6 @@ public class Lab05_5_EmOrmrethRethtihpong {
             System.exit(0);
           }
         default:
-
       }
     }while (true);
   }

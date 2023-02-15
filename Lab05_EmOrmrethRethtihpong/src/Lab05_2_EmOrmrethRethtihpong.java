@@ -24,7 +24,7 @@ class Student{
 }
 
 public class Lab05_2_EmOrmrethRethtihpong {
-  static void menu(){
+  static void menu() {
     System.out.println("==== Menu ====");
     System.out.println("1. Add new students");
     System.out.println("2. Delete multiple students");
@@ -64,7 +64,36 @@ public class Lab05_2_EmOrmrethRethtihpong {
           }while (askIfContinue());
           break;
         case 2:
-
+          int []deleteID = new int[50];
+          int counter = 0;
+          System.out.println("=======================================================");
+          System.out.println("| No   | ID   | Name\t\t\t\t\t\t   | Age  |");
+          System.out.println("=======================================================");
+          for(int i=0;i<studentArrayList.size();i++){
+            studentArrayList.get(i).displayStudent(i);
+          }
+          System.out.println("=======================================================");
+          do {
+            System.out.print("Input student #" + (counter+1) + " : ");
+            deleteID[counter] = scanner.nextInt();
+            counter++;
+          }while (askIfContinue());
+          System.out.println();
+          for(int i=0;i<counter;i++){
+            boolean found = false;
+            int j;
+            for (j=0;j<studentArrayList.size();j++){
+              if(deleteID[i] == studentArrayList.get(j).getId()){
+                System.out.println("Student with ID " + studentArrayList.get(j).getId() + " is deleted");
+                studentArrayList.remove(j);
+                found = true;
+                break;
+              }
+            }
+            if(!found){
+              System.out.println("Student with ID " + deleteID[i] + " is not found");
+            }
+          }
           break;
         case 3:
           System.exit(0);

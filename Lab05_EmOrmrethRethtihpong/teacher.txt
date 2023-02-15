@@ -1,21 +1,21 @@
-Rethtihpong Em
-Em
-Male
-rithtipong
-cpp oop
+Tola
+Ma
+M
+tola@domain.com
+OOP, C++, Web dev
+100.0
+
+Makara
+John
+F
+makara@domain.com
+OOP
 200.0
 
-Sunn Chhay
-Khoun
-Male
-sdaf
-2sdafadsfg
-124.0
-
-Rethtih Pong
+Rethtihpong
 Em
-Male
-rithtipongem@gmail.com
-OOP Java
+M
+rethtihpong@domain.com
+C++ OOP
 200.0
 
