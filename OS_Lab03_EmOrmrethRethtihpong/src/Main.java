@@ -1,3 +1,4 @@
+import java.util.Date;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -50,16 +51,18 @@ class Matrix{
       }
   }
   void multiply() {
-    resultMatrix = new int[this.rowA][this.columnB];
-
-    for (int i = 0; i < this.rowA; i++) {
-      for (int j = 0; j < this.columnB; j++) {
+    resultMatrix = new int[3500][3500];
+    Date start = new Date();
+    for (int i = 0; i < 3500; i++) {
+      for (int j = 0; j < 3500; j++) {
         resultMatrix[i][j] = 0;
-        for (int k = 0; k < this.rowB; k++) {
+        for (int k = 0; k < 3500; k++) {
           resultMatrix[i][j] += matrixA[i][k] * matrixB[k][j];
         }
       }
     }
+    Date end = new Date();
+    System.out.println("\nTime taken in seconds: " + (double)(end.getTime() - start.getTime())/1000);
   }
   void displayMatrix(){
     System.out.println("Matrix A: ");
@@ -101,33 +104,33 @@ class SingleThread extends Matrix{
     boolean checkIfMatrixIsCorrect = false;
     Scanner scanf = new Scanner(System.in);
     Random rand = new Random();
-    do {
-      System.out.println("Matrix A: ");
-      System.out.print("Input row: ");
-      this.rowA = scanf.nextInt();
-      System.out.print("Input column: ");
-      this.columnA = scanf.nextInt();
-      System.out.println("Matrix B: ");
-      System.out.print("Input row: ");
-      this.rowB = scanf.nextInt();
-      System.out.print("Input column: ");
-      this.columnB = scanf.nextInt();
-
-      if(columnA == rowB){
-        checkIfMatrixIsCorrect = true;
-      }else{
-        System.out.println("Cannot calculate please input again....");
-      }
-    }while (!checkIfMatrixIsCorrect);
-    matrixA = new int[this.rowA][this.columnA];
-    for (int i=0;i<this.rowA;i++){
-      for (int j=0;j<this.columnA;j++){
+//    do {
+//      System.out.println("Matrix A: ");
+//      System.out.print("Input row: ");
+//      this.rowA = scanf.nextInt();
+//      System.out.print("Input column: ");
+//      this.columnA = scanf.nextInt();
+//      System.out.println("Matrix B: ");
+//      System.out.print("Input row: ");
+//      this.rowB = scanf.nextInt();
+//      System.out.print("Input column: ");
+//      this.columnB = scanf.nextInt();
+//
+//      if(columnA == rowB){
+//        checkIfMatrixIsCorrect = true;
+//      }else{
+//        System.out.println("Cannot calculate please input again....");
+//      }
+//    }while (!checkIfMatrixIsCorrect);
+    matrixA = new int[3500][3500];
+    for (int i=0;i<3500;i++){
+      for (int j=0;j<3500;j++){
         matrixA[i][j] = rand.nextInt(100);
       }
     }
-    matrixB = new int[this.rowB][this.columnB];
-    for (int i=0;i<this.rowB;i++){
-      for (int j=0;j<this.columnB;j++){
+    matrixB = new int[3500][3500];
+    for (int i=0;i<3500;i++){
+      for (int j=0;j<3500;j++){
         matrixB[i][j] = rand.nextInt(100);
       }
     }
@@ -139,17 +142,18 @@ class SingleThread extends Matrix{
     SingleThread singleThread = new SingleThread();
     do {
       singleThread.createMenu();
-      userInput = scanf.nextInt();
-      switch (userInput){
+//      userInput = scanf.nextInt();1
+      switch (2){
         case 1:
           singleThread.createMatrix();
           break;
         case 2:
           singleThread.autoGenerateMatrix();
+          singleThread.multiply();
+          System.exit(0);
           break;
         case 3:
-          singleThread.multiply();
-          singleThread.displayMatrix();
+//          singleThread.displayMatrix();
           break;
         case 4:
           System.exit(0);
