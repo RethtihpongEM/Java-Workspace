@@ -49,6 +49,7 @@ public class Lab07_3_EmOrmrethRethtihpong {
     System.out.println("1. A Character");
     System.out.println("2. A String");
     System.out.println("3. Unique Strings");
+    System.out.println("4. Quit");
     System.out.print("Choose an opt: ");
   }
   public static void main(String[] args) {
@@ -75,6 +76,9 @@ public class Lab07_3_EmOrmrethRethtihpong {
           System.out.print("Input amount of string: ");
           amount =scanner.nextInt();
           System.out.println("Random a string: " + Arrays.toString(randomText.randomizeStrings(length, amount)));
+          break;
+        case 4:
+          System.exit(0);
           break;
         default:
           System.out.println("Invalid input....");
