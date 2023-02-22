@@ -73,6 +73,8 @@ public class Lab07_2_EmOrmrethRethtihpong {
             System.out.println("Result: " + Arrays.toString(result));
           }while (askIfContinue());
           break;
+        case 3:
+          System.exit(0);
       }
     }while (true);
   }
