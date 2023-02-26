@@ -1,0 +1,8 @@
+#mainPanel{
+    -fx-background-color: #1a92ef;
+    -fx-border-width: 2px;
+}
+
+.root{
+    -fx-background-color: #ffffff;
+}

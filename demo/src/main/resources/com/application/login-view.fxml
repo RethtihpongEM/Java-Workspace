@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.LoginController">
+   <children>
+      <Label layoutX="499.0" layoutY="22.0" prefHeight="51.0" prefWidth="616.0" text="Welcome to POS System">
+         <font>
+            <Font name="Fuzzy Bubbles Bold" size="50.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="548.0" layoutY="145.0" prefHeight="611.0" prefWidth="504.0">
+         <children>
+            <Button layoutX="183.0" layoutY="404.0" mnemonicParsing="false" onAction="#LoginBtn" prefHeight="61.0" prefWidth="154.0" text="Login">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Button>
+            <Label layoutX="177.0" layoutY="102.0" prefHeight="46.0" prefWidth="167.0" text="Email/Username">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="203.0" layoutY="216.0" prefHeight="46.0" prefWidth="98.0" text="Password">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordField" layoutX="167.0" layoutY="262.0" prefHeight="31.0" prefWidth="187.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </PasswordField>
+            <TextField fx:id="emailTF" layoutX="167.0" layoutY="170.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
