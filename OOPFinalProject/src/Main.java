@@ -52,10 +52,18 @@ public class Main {
 //  }
   public static void main(String[] args) throws Exception {
     Class.forName("com.mysql.jdbc.Driver");
-    Database database = new Database("possystem","root","",3306);
-    loginPage();
+//    Database database = new Database("possystem","root","",3306);
+//    loginPage(database);
+//    Login login = new Login();
+//    if (login.authentication(database,"admin@domain.com","admin")){
+//      System.out.println("Successful");
+//    }else{
+//      System.out.println("Failed");
+//    }
+    ReadFromDatabase readFromDatabase = new ReadFromDatabase("possystem","root","",3306);
+    readFromDatabase.displayAllUser();
   }
-  private static void loginPage(){
-    LoginGUI loginGUI = new LoginGUI(null);
-  }
+//  private static void loginPage(Database database){
+//
+//  }
 }

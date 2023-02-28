@@ -1,6 +1,7 @@
 import java.sql.SQLException;
 
 public class Login{
+
   public boolean authentication(Database database,String value,String password){
     boolean login = false;
     try{
@@ -15,6 +16,8 @@ public class Login{
         user.setPassword(database.rs.getString("password"));
         if(password.equals(user.getPassword())){
           login = true;
+        }else{
+          System.out.println("Wrong password");
         }
       }
     } catch (

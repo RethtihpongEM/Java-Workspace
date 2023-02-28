@@ -14,7 +14,7 @@ public class Main extends Application{
   public void start(Stage stage) {
     try {
       Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login-view.fxml")));
-      Scene scene = new Scene(root, 1600, 900);
+      Scene scene = new Scene(root, 1350, 700);
       stage.setScene(scene);
       stage.show();
     } catch (IOException e) {
