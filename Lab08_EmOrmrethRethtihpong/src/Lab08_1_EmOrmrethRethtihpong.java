@@ -88,13 +88,6 @@ class Grid implements GridLayout{
   }
 }
 public class Lab08_1_EmOrmrethRethtihpong {
-  static boolean askIfContinue(){
-    System.out.print("Do you want to continue(y/n)?: ");
-    Scanner scanner = new Scanner(System.in);
-    String input = scanner.next();
-    input = input.toLowerCase();
-    return input.equals("y") || input.equals("yes");
-  }
   static void menu(){
     System.out.println("1. Update a single cell");
     System.out.println("2. Insert at a row");
