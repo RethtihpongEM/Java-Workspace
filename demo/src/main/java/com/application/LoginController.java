@@ -21,9 +21,7 @@ public class LoginController {
   private Scene scene;
   private Parent root;
   private AnchorPane scenePane;
-
-
-    LoginAuthentication loginAuthentication;
+  LoginAuthentication loginAuthentication;
   public void LoginBtn(ActionEvent event) throws Exception {
     String email = emailTF.getText();
     String password = passwordField.getText();
@@ -32,14 +30,14 @@ public class LoginController {
       if (loginAuthentication.authentication(email,password)){
         User user = loginAuthentication.getUser();
         if(user.getType().equals("Admin") || user.getType().equals("admin")){
-          System.out.println("Admin");
+          System.out.println("Logged in as Admin");
           root = FXMLLoader.load(getClass().getResource("adminMenu.fxml"));
           stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
           scene = new Scene(root);
           stage.setScene(scene);
           stage.show();
         }else {
-          System.out.println("Employee");
+          System.out.println("Logged in as Employee");
           root = FXMLLoader.load(getClass().getResource("employeeMenu.fxml"));
           stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
           scene = new Scene(root);
