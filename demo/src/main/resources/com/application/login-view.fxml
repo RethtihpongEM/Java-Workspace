@@ -7,40 +7,45 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@../../css/login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.LoginController">
    <children>
-      <Label layoutX="499.0" layoutY="22.0" prefHeight="51.0" prefWidth="616.0" text="Welcome to POS System">
-         <font>
-            <Font name="Fuzzy Bubbles Bold" size="50.0" />
-         </font>
-      </Label>
-      <AnchorPane layoutX="548.0" layoutY="145.0" prefHeight="611.0" prefWidth="504.0">
+      <AnchorPane fx:id="loginPanel" layoutX="413.0" layoutY="134.0" prefHeight="500.0" prefWidth="539.0">
          <children>
-            <Button layoutX="183.0" layoutY="404.0" mnemonicParsing="false" onAction="#LoginBtn" prefHeight="61.0" prefWidth="154.0" text="Login">
+            <Button id="loginBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="60.0" layoutY="382.0" mnemonicParsing="false" onAction="#LoginBtn" prefHeight="45.0" prefWidth="410.0" text="Login now" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="25.0" />
+                  <Font name="Arial" size="18.0" />
                </font>
             </Button>
-            <Label layoutX="177.0" layoutY="102.0" prefHeight="46.0" prefWidth="167.0" text="Email/Username">
+            <Label layoutX="39.0" layoutY="159.0" prefHeight="31.0" prefWidth="178.0" text="E-mail or Username" textFill="WHITE">
                <font>
-                  <Font size="22.0" />
+                  <Font name="Arial" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="203.0" layoutY="216.0" prefHeight="46.0" prefWidth="98.0" text="Password">
+            <PasswordField fx:id="passwordField" layoutX="64.0" layoutY="286.0" prefHeight="45.0" prefWidth="410.0" promptText="Enter your password">
                <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-            <PasswordField fx:id="passwordField" layoutX="167.0" layoutY="262.0" prefHeight="31.0" prefWidth="187.0">
-               <font>
-                  <Font size="15.0" />
+                  <Font name="Arial" size="16.0" />
                </font>
             </PasswordField>
-            <TextField fx:id="emailTF" layoutX="167.0" layoutY="170.0">
+            <TextField fx:id="emailTF" layoutX="64.0" layoutY="193.0" prefHeight="45.0" prefWidth="410.0" promptText="Enter your e-mail or username ">
                <font>
-                  <Font size="15.0" />
+                  <Font name="Arial" size="16.0" />
                </font>
             </TextField>
+            <Label id="welcomeText" layoutX="189.0" layoutY="25.0" prefHeight="36.0" prefWidth="185.0" text="WELCOME BACK" textFill="#525458">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label id="welcomeText" layoutX="112.0" layoutY="61.0" prefHeight="31.0" prefWidth="339.0" text="Log into your account" textFill="#d1d3d4">
+               <font>
+                  <Font name="Arial Bold" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="39.0" layoutY="258.0" prefHeight="16.0" prefWidth="90.0" text="Password" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
