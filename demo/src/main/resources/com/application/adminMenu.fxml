@@ -39,17 +39,17 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="productBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleClicks" onMouseClicked="#handleClicks" prefHeight="50.0" prefWidth="225.0" text="            Manage Product" textFill="#f5f5f5">
+            <Button fx:id="productBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleClicks" prefHeight="50.0" prefWidth="225.0" text="            Manage Product" textFill="#f5f5f5">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="salesBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleClicks" onMouseClicked="#handleClicks" prefHeight="50.0" prefWidth="225.0" text="            Sales Record" textFill="#f5f5f5">
+            <Button fx:id="salesBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleClicks" prefHeight="50.0" prefWidth="225.0" text="            Sales Record" textFill="#f5f5f5">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button fx:id="settingBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleClicks" onMouseClicked="#handleClicks" prefHeight="50.0" prefWidth="225.0" text="            Setting" textFill="#f5f5f5">
+            <Button fx:id="settingBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleClicks" prefHeight="50.0" prefWidth="225.0" text="            Setting" textFill="#f5f5f5">
                <font>
                   <Font size="14.0" />
                </font>
@@ -81,15 +81,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="panelProduct" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #141318;">
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="342.0" layoutY="251.0" prefHeight="124.0" prefWidth="352.0" text="Manage Product" textFill="WHITE">
-                     <font>
-                        <Font size="45.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
+            <AnchorPane fx:id="panelProduct" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #141318;" />
             <AnchorPane fx:id="panelEmployee" prefHeight="768.0" prefWidth="1142.0" style="-fx-background-color: #141318;">
                <children>
                   <TableView fx:id="table" prefHeight="361.0" prefWidth="1122.0" style="-fx-background-color: #222428;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
@@ -116,7 +108,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <TextField layoutX="107.0" layoutY="338.0" prefHeight="35.0" prefWidth="1000.0" promptText="Enter Employee ID" style="-fx-background-color: #222428;" AnchorPane.rightAnchor="9.0" />
+                  <TextField fx:id="searchFilter" layoutX="107.0" layoutY="338.0" prefHeight="35.0" prefWidth="1000.0" promptText="Enter Employee ID" style="-fx-background-color: #222428;" AnchorPane.rightAnchor="9.0" />
                   <Label layoutX="21.0" layoutY="29.0" text="Add a new employee" textFill="WHITESMOKE">
                      <font>
                         <Font name="Arial Bold" size="18.0" />

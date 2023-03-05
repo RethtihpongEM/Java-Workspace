@@ -1,16 +1,18 @@
 package com.application;
 
 import javafx.application.Application;
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Main extends Application{
-
 
   @Override
   public void start(Stage stage) {
@@ -24,7 +26,17 @@ public class Main extends Application{
     }
   }
 
-  public static void main(String[] args){
+  public static void main(String[] args) throws Exception {
     launch();
+//    ManageEmployee manageEmployee = new ManageEmployee();
+//    ManageProduct manageProduct = new ManageProduct();
+//    ObservableList<User> user = manageEmployee.fetchUser();
+//    ArrayList<Product> products = manageProduct.fetchProduct();
+//    for(int i =0;i<user.size();i++){
+//      System.out.println(user.get(i).getUserName());
+//    }
+//    for(int i=0;i<products.size();i++){
+//      System.out.println(products.get(i).getpName());
+//    }
   }
 }

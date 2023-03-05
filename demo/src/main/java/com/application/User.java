@@ -1,6 +1,6 @@
 package com.application;
 
-public class User {
+public class User{
   private int userID;
   private String firstName;
   private String lastName;

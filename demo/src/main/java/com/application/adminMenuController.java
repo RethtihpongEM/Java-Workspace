@@ -3,6 +3,7 @@ package com.application;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -65,25 +66,30 @@ public class adminMenuController implements Initializable{
 
   @FXML
   private TableColumn<User, String> userName;
+  @FXML
+  private TextField searchFilter;
+
+
 
   ObservableList<User> list;
 
 
+
   @FXML
   public void initialize(URL url, ResourceBundle resourceBundle) {
-    userName.setCellValueFactory(new PropertyValueFactory<User,String>("userName"));
-    firstName.setCellValueFactory(new PropertyValueFactory<User,String>("firstName"));
-    lastName.setCellValueFactory(new PropertyValueFactory<User,String>("lastName"));
-    phone.setCellValueFactory(new PropertyValueFactory<User,String>("phone"));
-    gender.setCellValueFactory(new PropertyValueFactory<User,String>("gender"));
-    type.setCellValueFactory(new PropertyValueFactory<User,String>("type"));
-    password.setCellValueFactory(new PropertyValueFactory<User,String>("password"));
-    email.setCellValueFactory(new PropertyValueFactory<User,String>("email"));
-    address.setCellValueFactory(new PropertyValueFactory<User,String>("address"));
-    date.setCellValueFactory(new PropertyValueFactory<User,String>("date"));
-    age.setCellValueFactory(new PropertyValueFactory<User,Integer>("age"));
-    id.setCellValueFactory(new PropertyValueFactory<User,Integer>("userID"));
-    ManageEmployee manageEmployee = null;
+    userName.setCellValueFactory(new PropertyValueFactory<User, String>("userName"));
+    firstName.setCellValueFactory(new PropertyValueFactory<User, String>("firstName"));
+    lastName.setCellValueFactory(new PropertyValueFactory<User, String>("lastName"));
+    phone.setCellValueFactory(new PropertyValueFactory<User, String>("phone"));
+    gender.setCellValueFactory(new PropertyValueFactory<User, String>("gender"));
+    type.setCellValueFactory(new PropertyValueFactory<User, String>("type"));
+    password.setCellValueFactory(new PropertyValueFactory<User, String>("password"));
+    email.setCellValueFactory(new PropertyValueFactory<User, String>("email"));
+    address.setCellValueFactory(new PropertyValueFactory<User, String>("address"));
+    date.setCellValueFactory(new PropertyValueFactory<User, String>("date"));
+    age.setCellValueFactory(new PropertyValueFactory<User, Integer>("age"));
+    id.setCellValueFactory(new PropertyValueFactory<User, Integer>("userID"));
+    ManageEmployee manageEmployee;
     try {
       manageEmployee = new ManageEmployee();
     } catch (Exception e) {
@@ -91,7 +97,23 @@ public class adminMenuController implements Initializable{
     }
     list = manageEmployee.fetchUser();
     table.setItems(list);
+    FilteredList<User> filteredList = new FilteredList<>(list, b -> true);
+    searchFilter.textProperty().addListener((observable, oldValue, newValue) -> {
+      filteredList.setPredicate(user -> {
+        if (newValue == null || newValue.isEmpty()) {
+          return true;
+        }
+        String lowercasefilter = newValue.toLowerCase();
+        if (user.getUserName().toLowerCase().indexOf(lowercasefilter) != -1) {
+          return true;
+        } else
+          return false;
+      });
+    });
+    table.setItems(filteredList);
   }
+
+
   @FXML
   private Button employeeBtn;
 
@@ -139,6 +161,9 @@ public class adminMenuController implements Initializable{
   @FXML
   private TextField usernameField;
 
+  public adminMenuController() throws Exception {
+  }
+
   public void addEmployee(ActionEvent event) throws Exception {
     ManageEmployee manageEmployee = new ManageEmployee();
     User user = new User();
@@ -158,20 +183,21 @@ public class adminMenuController implements Initializable{
     initialize(null,null);
   }
   public void handleClicks(ActionEvent event) throws IOException {
-    if(event.getSource() == employeeBtn){
+    if (event.getSource() == employeeBtn) {
       panelEmployee.toFront();
-    }else if(event.getSource() == productBtn){
+    } else if (event.getSource() == productBtn) {
       panelProduct.toFront();
-    }else if(event.getSource() == salesBtn){
+    } else if (event.getSource() == salesBtn) {
       panelSales.toFront();
-    }else if(event.getSource() == settingBtn){
+    } else if (event.getSource() == settingBtn) {
       panelSetting.toFront();
-    }else if(event.getSource() == logoutBtn){
+    } else if (event.getSource() == logoutBtn) {
       root = FXMLLoader.load(getClass().getResource("login-view.fxml"));
-      stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+      stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
       scene = new Scene(root);
       stage.setScene(scene);
       stage.show();
     }
   }
+
 }
