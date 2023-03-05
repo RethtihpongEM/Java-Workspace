@@ -1,6 +1,6 @@
 package com.application;
 
-public class User{
+public class User {
   private int userID;
   private String firstName;
   private String lastName;
@@ -102,9 +102,6 @@ public class User{
     return address;
   }
 
-  public void setUserName(String firstName,int userID) {
-    this.userName = firstName+userID;
-  }
   public void setUserName(String userName) {
     this.userName = userName;
   }

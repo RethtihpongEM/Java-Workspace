@@ -1,11 +1,10 @@
 package com.application;
 
-
-public class Product{
+public class Product {
   private int pID;
   private String pName;
-  private double pPrice;
   private int pQty;
+  private double pPrice;
   private String pType;
 
   public int getpID() {
@@ -16,12 +15,12 @@ public class Product{
     return pName;
   }
 
-  public double getpPrice() {
-    return pPrice;
-  }
-
   public int getpQty() {
     return pQty;
+  }
+
+  public double getpPrice() {
+    return pPrice;
   }
 
   public String getpType() {
@@ -36,12 +35,12 @@ public class Product{
     this.pName = pName;
   }
 
-  public void setpPrice(double pPrice) {
-    this.pPrice = pPrice;
-  }
-
   public void setpQty(int pQty) {
     this.pQty = pQty;
+  }
+
+  public void setpPrice(double pPrice) {
+    this.pPrice = pPrice;
   }
 
   public void setpType(String pType) {

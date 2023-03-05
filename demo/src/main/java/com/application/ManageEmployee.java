@@ -51,6 +51,63 @@ public class ManageEmployee extends QueryFunction{
     return userList;
   }
 
+  public boolean checkID(int ID) throws SQLException {
+    boolean searchFound = false;
+    String sql = "SELECT * FROM users WHERE userID=?";
+
+    PreparedStatement statement = connection.prepareStatement(sql);
+    statement.setInt(1, ID);
+    ResultSet resultSet = statement.executeQuery();
+    if (resultSet.next()) {
+      System.out.println("Found");
+      searchFound = true;
+    }
+    return searchFound;
+  }
+
+  public User getUser(int ID) throws SQLException {
+    String sql = "SELECT * FROM users WHERE userID=?";
+    User user = new User();
+    PreparedStatement statement = connection.prepareStatement(sql);
+    statement.setInt(1, ID);
+    ResultSet resultSet = statement.executeQuery();
+    while (resultSet.next()){
+      user.setUserID(resultSet.getInt("userID"));
+      user.setFirstName(resultSet.getString("firstName"));
+      user.setLastName(resultSet.getString("lastName"));
+      user.setAge(resultSet.getInt("age"));
+      user.setDate(resultSet.getString("dateOfBirth"));
+      user.setEmail(resultSet.getString("email"));
+      user.setPassword(resultSet.getString("password"));
+      user.setPhone(resultSet.getString("phone"));
+      user.setGender(resultSet.getString("gender"));
+      user.setType(resultSet.getString("type"));
+      user.setAddress(resultSet.getString("address"));
+      user.setUserName(resultSet.getString("userName"));
+    }
+    return user;
+  }
+
+  public void editEmployee(String firstName,String lastName,int age,String date,
+                           String address,String telephone,String email,String password,String userName,String types,String gender,int ID) throws SQLException {
+    String sql = "UPDATE users set firstName = '" + firstName + "' ,lastName = '" + lastName + "', age = '"
+            + age + "',dateOfBirth = '" + date + "',email = '" +email+ "',password = '" + password+ "', phone = '" +telephone+"',gender ='"
+            + gender + "',type = '" + types+ "', address = '" +address+ "',userName = '" + userName + "' WHERE userID = '" + ID + "'";
+    PreparedStatement statement = connection.prepareStatement(sql);
+    statement.execute();
+  }
+
+  public void deleteEmployee(int ID) throws SQLException {
+    String sql = "DELETE FROM Users WHERE userID=?";
+
+    PreparedStatement statement = connection.prepareStatement(sql);
+    statement.setInt(1, ID);
+
+    int rowsDeleted = statement.executeUpdate();
+    if (rowsDeleted > 0) {
+      System.out.println("A user was deleted successfully!");
+    }
+  }
   public void insertEmployee(String firstName,String lastName,int age,String date,
                              String address,String telephone,String email,String password,String userName,String types,String gender)
   {

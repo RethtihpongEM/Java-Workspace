@@ -28,4 +28,7 @@
 .button:pressed{
     -fx-background-color: #1e1e20;
 }
+.spinner{
+    -fx-base: #222428;
+}
 
