@@ -1,7 +1,10 @@
 package com.MainApplication.Controller;
 
 import com.UserManagement.LoginAuthentication;
+<<<<<<< HEAD
 import com.UserManagement.ManageEmployee;
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
 import com.UserManagement.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,7 +16,11 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+<<<<<<< HEAD
 public class LoginController{
+=======
+public class LoginController {
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
   @FXML
   private TextField emailTF;
   @FXML

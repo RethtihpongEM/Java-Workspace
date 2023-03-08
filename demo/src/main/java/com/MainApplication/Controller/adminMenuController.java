@@ -4,7 +4,10 @@ import com.ProductManagement.ManageProduct;
 import com.UserManagement.User;
 import com.UserManagement.ManageEmployee;
 import com.ProductManagement.Product;
+<<<<<<< HEAD
 import javafx.animation.PauseTransition;
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
@@ -17,9 +20,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+<<<<<<< HEAD
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+=======
+import javafx.stage.Stage;
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
 
 import java.io.IOException;
 import java.net.URL;
@@ -29,19 +36,26 @@ public class adminMenuController implements Initializable{
   private Stage stage;
   private Scene scene;
   private Parent root;
+<<<<<<< HEAD
   ManageEmployee manageEmployee = new ManageEmployee();
   private User user = manageEmployee.getUserByActive();
   private Product product;
   PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
+=======
+  private User user;
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
 
   //from age Spinner
   int ageValue;
   ObservableList<User> list;
   ObservableList<Product> plist;
 
+<<<<<<< HEAD
   public adminMenuController() throws Exception {
   }
 
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
   @FXML
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -67,7 +81,10 @@ public class adminMenuController implements Initializable{
     pName.setCellValueFactory(new PropertyValueFactory<Product, String>("pname"));
     pPrice.setCellValueFactory(new PropertyValueFactory<Product, Double>("pprice"));
     pQty.setCellValueFactory(new PropertyValueFactory<Product, Integer>("pqty"));
+<<<<<<< HEAD
     pType.setCellValueFactory(new PropertyValueFactory<Product, String>("ptype"));
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
 
     ManageEmployee manageEmployee = null;
     try {
@@ -88,7 +105,11 @@ public class adminMenuController implements Initializable{
 
     //search Filter for user table
     FilteredList<User> filterUserList = new FilteredList<>(list, b -> true);
+<<<<<<< HEAD
     FilteredList<Product> filteredProductList = new FilteredList<>(plist, b -> true);
+=======
+//    FilteredList<Product> filteredProductList = new FilteredList<>(plist, b -> true);
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
     searchFilter.textProperty().addListener((observable, oldValue, newValue) -> {
       filterUserList.setPredicate(user -> {
         if (newValue == null || newValue.isEmpty()) {
@@ -101,6 +122,7 @@ public class adminMenuController implements Initializable{
           return false;
       });
     });
+<<<<<<< HEAD
     searchFilterProduct.textProperty().addListener((observable,oldValue,newValue) ->{
       filteredProductList.setPredicate(product -> {
         if (newValue == null || newValue.isEmpty()) {
@@ -115,6 +137,9 @@ public class adminMenuController implements Initializable{
     });
     table.setItems(filterUserList);
     pTable.setItems(filteredProductList);
+=======
+    table.setItems(filterUserList);
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
   }
   public void clearTextField(){
     firstnameField.clear();
@@ -126,6 +151,7 @@ public class adminMenuController implements Initializable{
     usernameField.clear();
   }
 
+<<<<<<< HEAD
   public void clearAddProductTextField(){
     productNameTextField.clear();
     priceTextField.clear();
@@ -133,6 +159,8 @@ public class adminMenuController implements Initializable{
     quantityTextField.clear();
   }
 
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
   public void clearUpdateField(){
     firstnameField_Upd.clear();
     lastnameField_Upd.clear();
@@ -148,6 +176,7 @@ public class adminMenuController implements Initializable{
     ageField_Upd.clear();
   }
 
+<<<<<<< HEAD
   public void clearModifyProductField(){
     pNameEditField.clear();
     pTypeEditField.clear();
@@ -155,6 +184,8 @@ public class adminMenuController implements Initializable{
     pQtyEditField.clear();
   }
 
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
   int index = -1;
 
   public void findEmployee(ActionEvent event){
@@ -175,17 +206,21 @@ public class adminMenuController implements Initializable{
         addressField_Upd.setText(user.getAddress());
         usernameField_Upd.setText(user.getUserName());
         updatePanel.toFront();
+<<<<<<< HEAD
       }else{
         updateWarningLabel.setText("User not found");
         idField.clear();
         pauseTransition.setOnFinished(event1 -> updateWarningLabel.setText(null));
         pauseTransition.play();
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
       }
     }catch (Exception e){
       System.out.println(e.getMessage());
     }
   }
 
+<<<<<<< HEAD
   public void findProduct(ActionEvent event){
     try {
       ManageProduct manageProduct = new ManageProduct();
@@ -267,6 +302,17 @@ public class adminMenuController implements Initializable{
       }else{
         idTextField.clear();
       }
+=======
+  public void editBtn(ActionEvent event){
+    try {
+      ManageEmployee manageEmployee = new ManageEmployee();
+      manageEmployee.editEmployee(firstnameField_Upd.getText(),lastnameField_Upd.getText(),Integer.parseInt(ageField_Upd.getText()),
+              dobField_Upd.getText(),addressField_Upd.getText(),phoneField_Upd.getText(),emailField_Upd.getText(),passField_Upd.getText(),usernameField_Upd.getText(),
+              typeField_Upd.getText(),genderField_Upd.getText(),Integer.parseInt(idField.getText()));
+      clearUpdateField();
+      initialize(null,null);
+      panelEmployee.toFront();
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
     }catch (Exception e){
       System.out.println(e.getMessage());
     }
@@ -276,6 +322,7 @@ public class adminMenuController implements Initializable{
     try {
       ManageEmployee manageEmployee = new ManageEmployee();
       if(manageEmployee.checkID(Integer.parseInt(idTextField.getText()))){
+<<<<<<< HEAD
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Warning");
         alert.setHeaderText("Delete user with ID = " + idTextField.getText());
@@ -294,6 +341,13 @@ public class adminMenuController implements Initializable{
         idTextField.clear();
         pauseTransition.play();
         pauseTransition.setOnFinished(event1 -> removeWarningLabel.setText(null));
+=======
+        manageEmployee.deleteEmployee(Integer.parseInt(idTextField.getText()));
+        System.out.println("Can delete");
+        initialize(null,null);
+      }else{
+        System.out.println("Cannot delete");
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
       }
     }catch (Exception e){
       System.out.println(e.getMessage());
@@ -319,6 +373,7 @@ public class adminMenuController implements Initializable{
     }
     manageEmployee.insertEmployee(user.getFirstName(),user.getLastName(),user.getAge(),user.getDate(),user.getAddress(),user.getPhone(),user.getEmail()
             ,user.getPassword(),user.getUserName(),user.getType(),user.getGender());
+<<<<<<< HEAD
     addEmployeeSuccess.setText("Successfully added a new user!");
     pauseTransition.setOnFinished(event1 -> addEmployeeSuccess.setText(null));
     pauseTransition.play();
@@ -340,6 +395,12 @@ public class adminMenuController implements Initializable{
     clearAddProductTextField();
   }
   public void handleClicks(ActionEvent event) throws Exception {
+=======
+    initialize(null,null);
+    clearTextField();
+  }
+  public void handleClicks(ActionEvent event) throws IOException {
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
     if(event.getSource() == employeeBtnEmp){
       panelEmployee.toFront();
     }else if(event.getSource() == productBtn){
@@ -350,10 +411,15 @@ public class adminMenuController implements Initializable{
       panelSetting.toFront();
     }else if(event.getSource() == backBtn_UpdEmp){
       panelEmployee.toFront();
+<<<<<<< HEAD
       idField.clear();
     }else if(event.getSource() == logoutBtn){
       root = FXMLLoader.load(getClass().getResource("login-view.fxml"));
       manageEmployee.editActive(user.getUserID(),0);
+=======
+    }else if(event.getSource() == logoutBtn){
+      root = FXMLLoader.load(getClass().getResource("login-view.fxml"));
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
       stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
       scene = new Scene(root);
       stage.setScene(scene);
@@ -379,6 +445,7 @@ public class adminMenuController implements Initializable{
   @FXML private AnchorPane updatePanel;
   @FXML private AnchorPane panelSetting;
 
+<<<<<<< HEAD
   @FXML private Label removeWarningLabel;
   @FXML private Label modifyLabel;
   @FXML private Label updateWarningLabel;
@@ -396,6 +463,9 @@ public class adminMenuController implements Initializable{
   @FXML private TextField quantityTextField;
   @FXML private TextField priceTextField;
   @FXML private TextField productTypeTextField;
+=======
+  //Add Field
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
   @FXML private TextField addressField;
   @FXML private TextField emailField;
   @FXML private TextField firstnameField;
@@ -441,5 +511,8 @@ public class adminMenuController implements Initializable{
   @FXML private TableColumn<Product,String> pName;
   @FXML private TableColumn<Product,Double> pPrice;
   @FXML private TableColumn<Product,Integer> pQty;
+<<<<<<< HEAD
   @FXML private TableColumn<Product,String> pType;
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
 }

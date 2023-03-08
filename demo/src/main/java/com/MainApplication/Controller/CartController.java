@@ -13,10 +13,20 @@ public class CartController {
   private SceneController sceneController = new SceneController();
   @FXML
   private Label prodExDate;
+<<<<<<< HEAD
   @FXML
   private Label productName;
   @FXML
   private Label productPrice;
+=======
+
+  @FXML
+  private Label productName;
+
+  @FXML
+  private Label productPrice;
+
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
   @FXML
   private Label productQty;
   @FXML
@@ -40,7 +50,11 @@ public class CartController {
   }
 
   public void increase(MouseEvent event) throws Exception {
+<<<<<<< HEAD
 //    product = product.searchProduct(cart.getProductID());
+=======
+    product = product.searchProduct(cart.getProductID());
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
     productQty.setText(String.valueOf(cart.getProductQty()+1));
     cart.setProductQty(cart.getProductQty()+1);
     product.setPqty(product.getPqty()-1);

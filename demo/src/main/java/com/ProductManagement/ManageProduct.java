@@ -5,7 +5,14 @@ import com.UserManagement.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+<<<<<<< HEAD
 import java.sql.*;
+=======
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
 import java.util.ArrayList;
 
 public class ManageProduct extends DBConnection {
@@ -13,6 +20,10 @@ public class ManageProduct extends DBConnection {
   private final Statement statement;
   private final User user = new User();
   Connection connection;
+<<<<<<< HEAD
+=======
+  private ArrayList<Product> products = new ArrayList<>();
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
   public ManageProduct() throws Exception {
     connection = con.getConnection("jdbc:mysql://localhost:3306/possys", "root", "");
     this.statement = connection.createStatement();
@@ -29,7 +40,10 @@ public class ManageProduct extends DBConnection {
         product.setPname(rs.getString("pName"));
         product.setPprice(rs.getDouble("pPrice"));
         product.setPqty(rs.getInt("pQty"));
+<<<<<<< HEAD
         product.setPtype(rs.getString("pType"));
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
         productList.add(product);
       }
     } catch (Exception e) {
@@ -38,6 +52,7 @@ public class ManageProduct extends DBConnection {
     return productList;
   }
 
+<<<<<<< HEAD
   public void insertProduct(String pName,Double pPrice,int pQty,String pType)
   {
     try {
@@ -100,4 +115,22 @@ public class ManageProduct extends DBConnection {
     }
     return searchFound;
   }
+=======
+    public ArrayList<Product> readFromDB() {
+      try{
+        ResultSet resultSet = statement.executeQuery("select * from products");
+        while (resultSet.next()) {
+          Product product = new Product();
+          product.setPid(resultSet.getInt("pID"));
+          product.setPname(resultSet.getString("pName"));
+          product.setPprice(resultSet.getDouble("pPrice"));
+          product.setPqty(resultSet.getInt("pQty"));
+          products.add(product);
+        }
+      } catch (Exception e){
+        System.out.println(e.getMessage());
+      }
+      return products;
+    }
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
 }

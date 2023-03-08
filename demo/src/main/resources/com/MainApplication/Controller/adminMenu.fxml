@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<<<<<<< HEAD
 <?import javafx.scene.Group?>
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
@@ -53,6 +56,14 @@
                   <Font size="14.0" />
                </font>
             </Button>
+<<<<<<< HEAD
+=======
+            <Button fx:id="settingBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleClicks" prefHeight="50.0" prefWidth="225.0" text="            Setting" textFill="#f5f5f5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
             <Button fx:id="logoutBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleClicks" prefHeight="50.0" prefWidth="225.0" text="            Log out" textFill="#f5f5f5">
                <font>
                   <Font size="14.0" />
@@ -71,6 +82,125 @@
                   </Label>
                </children>
             </AnchorPane>
+<<<<<<< HEAD
+=======
+            <AnchorPane fx:id="panelSetting" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #141318;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="402.0" layoutY="302.0" prefHeight="124.0" prefWidth="276.0" text="Setting" textFill="WHITE">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="panelProduct" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #141318;">
+               <children>
+                  <TableView fx:id="pTable" layoutY="392.0" prefHeight="361.0" prefWidth="1122.0" style="-fx-background-color: #222428;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <columns>
+                        <TableColumn id="tableColumn" fx:id="pID" prefWidth="131.20001220703125" resizable="false" text="ID" />
+                        <TableColumn id="tableColumn" fx:id="pName" prefWidth="272.8000183105469" resizable="false" text="Product Name" />
+                        <TableColumn id="tableColumn" fx:id="pQty" prefWidth="238.4000244140625" resizable="false" text="Qty" />
+                        <TableColumn id="tableColumn" fx:id="pPrice" prefWidth="260.0" resizable="false" text="Price" />
+                        <TableColumn id="tableColumn" fx:id="pPrice1" prefWidth="218.4000000000001" resizable="false" text="Type" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Button layoutX="14.0" layoutY="348.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #222428;" text="Search" textFill="WHITESMOKE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="panelEmployee" prefHeight="768.0" prefWidth="1142.0" style="-fx-background-color: #141318;">
+               <children>
+                  <TableView fx:id="table" prefHeight="361.0" prefWidth="1122.0" style="-fx-background-color: #222428;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <columns>
+                        <TableColumn id="tableColumn" fx:id="id" prefWidth="56.0" resizable="false" text="ID" />
+                        <TableColumn id="tableColumn" fx:id="firstName" prefWidth="104.0" resizable="false" text="Firstname" />
+                        <TableColumn id="tableColumn" fx:id="lastName" prefWidth="108.0" resizable="false" text="Lastname" />
+                        <TableColumn id="tableColumn" fx:id="age" prefWidth="40.0" resizable="false" text="Age" />
+                        <TableColumn id="tableColumn" fx:id="gender" prefWidth="55.0" resizable="false" text="Gender" />
+                        <TableColumn id="tableColumn" fx:id="date" prefWidth="84.0" resizable="false" text="Date of Birth" />
+                        <TableColumn id="tableColumn" fx:id="address" prefWidth="140.0" resizable="false" text="Address" />
+                        <TableColumn id="tableColumn" fx:id="phone" prefWidth="104.0" resizable="false" text="Telephone" />
+                        <TableColumn id="tableColumn" fx:id="userName" prefWidth="108.0" resizable="false" text="Username" />
+                        <TableColumn id="tableColumn" fx:id="email" prefWidth="132.0" resizable="false" text="Email" />
+                        <TableColumn id="tableColumn" fx:id="password" prefWidth="106.0" resizable="false" text="Password" />
+                        <TableColumn id="tableColumn" fx:id="type" prefWidth="83.0" resizable="false" text="Account Type" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <TextField fx:id="searchFilter" layoutX="107.0" layoutY="338.0" prefHeight="35.0" prefWidth="1122.0" promptText="Enter Username" style="-fx-background-color: #222428;" AnchorPane.rightAnchor="9.0" />
+                  <Label layoutX="21.0" layoutY="29.0" text="Add a new employee" textFill="WHITESMOKE">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="21.0" layoutY="204.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #222428;" text="Add Empoyee" textFill="WHITESMOKE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="firstnameField" layoutX="21.0" layoutY="66.0" prefHeight="35.0" prefWidth="196.0" promptText="Enter Firstname" style="-fx-background-color: #222428;" />
+                  <TextField fx:id="lastnameField" layoutX="233.0" layoutY="66.0" prefHeight="35.0" prefWidth="196.0" promptText="Enter Lastname" style="-fx-background-color: #222428;" />
+                  <TextField fx:id="addressField" layoutX="441.0" layoutY="112.0" prefHeight="35.0" prefWidth="196.0" promptText="Address" style="-fx-background-color: #222428;" />
+                  <TextField fx:id="telephoneField" layoutX="233.0" layoutY="112.0" prefHeight="35.0" prefWidth="196.0" promptText="Telephone" style="-fx-background-color: #222428;" />
+                  <TextField fx:id="emailField" layoutX="21.0" layoutY="158.0" prefHeight="35.0" prefWidth="196.0" promptText="Email" style="-fx-background-color: #222428;" />
+                  <TextField fx:id="dateField" layoutX="21.0" layoutY="112.0" prefHeight="35.0" prefWidth="196.0" promptText="Date of Birth" style="-fx-background-color: #222428;" />
+                  <TextField fx:id="usernameField" layoutX="233.0" layoutY="158.0" prefHeight="35.0" prefWidth="196.0" promptText="Username" style="-fx-background-color: #222428;" />
+                  <RadioButton fx:id="genderRB_M" layoutX="564.0" layoutY="76.0" mnemonicParsing="false" text="Male" textFill="#9a9a9a">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Gender" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="genderRB_F" layoutX="618.0" layoutY="76.0" mnemonicParsing="false" text="Female" textFill="#9a9a9a" toggleGroup="$Gender">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <Spinner fx:id="ageSpinner" editable="true" layoutX="476.0" layoutY="71.0" prefHeight="25.0" prefWidth="77.0" />
+                  <Label layoutX="441.0" layoutY="75.0" text="Age:" textFill="#9a9a9a">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="816.0" layoutY="29.0" text="Remove Employee" textFill="WHITESMOKE">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="idTextField" layoutX="816.0" layoutY="59.0" prefHeight="35.0" prefWidth="196.0" promptText="Enter ID" style="-fx-background-color: #222428;">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="816.0" layoutY="105.0" mnemonicParsing="false" onAction="#removeEmployee" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #222428;" text="Remove" textFill="WHITESMOKE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="816.0" layoutY="176.0" text="Update Employee Info" textFill="WHITESMOKE">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="idField" layoutX="816.0" layoutY="207.0" prefHeight="35.0" prefWidth="196.0" promptText="Enter ID" style="-fx-background-color: #222428;">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="updateBtnEmp" layoutX="816.0" layoutY="253.0" mnemonicParsing="false" onAction="#findEmployee" prefHeight="35.0" prefWidth="100.0" text="Update" textFill="#e8e8e8" />
+               </children>
+            </AnchorPane>
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
             <AnchorPane fx:id="updatePanel" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #141318;">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="479.0" layoutY="30.0" prefHeight="35.0" prefWidth="226.0" text="Employee Information" textFill="WHITESMOKE">
@@ -94,7 +224,11 @@
                   </Button>
                   <TextField fx:id="phoneField_Upd" layoutX="521.0205078125" layoutY="365.0" prefHeight="26.0" prefWidth="196.0" style="-fx-background-color: #222428;" />
                   <TextField fx:id="addressField_Upd" layoutX="521.0205078125" layoutY="320.0" prefHeight="26.0" prefWidth="196.0" style="-fx-background-color: #222428;" />
+<<<<<<< HEAD
                   <Label layoutX="443.0" layoutY="90.0" prefHeight="35.0" prefWidth="70.0" text="Firstname" textFill="WHITESMOKE">
+=======
+                  <Label layoutX="445.0205078125" layoutY="90.0" prefHeight="35.0" prefWidth="62.0" text="Firstname" textFill="WHITESMOKE">
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
@@ -144,7 +278,11 @@
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Label>
+<<<<<<< HEAD
                   <Label layoutX="425.0" layoutY="546.0" prefHeight="35.0" prefWidth="90.0" text="Account Type" textFill="WHITESMOKE">
+=======
+                  <Label layoutX="425.0205078125" layoutY="546.0" prefHeight="35.0" prefWidth="85.0" text="Account Type" textFill="WHITESMOKE">
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
                      <font>
                         <Font name="Arial" size="14.0" />
                      </font>
@@ -156,6 +294,7 @@
                   </Button>
                </children>
             </AnchorPane>
+<<<<<<< HEAD
             <AnchorPane fx:id="panelEmployee" prefHeight="768.0" prefWidth="1142.0" style="-fx-background-color: #141318;">
                <children>
                   <TableView fx:id="table" prefHeight="361.0" prefWidth="1122.0" style="-fx-background-color: #222428;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
@@ -394,6 +533,8 @@
                   </Group>
                </children>
             </AnchorPane>
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
          </children>
       </StackPane>
    </children>

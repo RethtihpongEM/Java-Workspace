@@ -15,6 +15,7 @@ public class ManageEmployee extends DBConnection {
     connection = con.getConnection("jdbc:mysql://localhost:3306/possys", "root", "");
     this.statement = connection.createStatement();
   }
+<<<<<<< HEAD
   public User getUserByActive() throws SQLException {
     String sql = "SELECT * FROM users WHERE is_active=1";
     User user = new User();
@@ -36,6 +37,9 @@ public class ManageEmployee extends DBConnection {
     }
     return user;
   }
+=======
+
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
 
   public ObservableList<User> fetchUser(){
   ObservableList <User> userList = FXCollections.observableArrayList();
@@ -110,12 +114,15 @@ public class ManageEmployee extends DBConnection {
     statement.execute();
   }
 
+<<<<<<< HEAD
   public void editActive(int ID,int is_active) throws SQLException {
     String sql = "UPDATE users set is_active = '" + is_active + "' WHERE userID = '" + ID + "'";
     PreparedStatement statement = connection.prepareStatement(sql);
     statement.execute();
   }
 
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
   public void deleteEmployee(int ID) throws SQLException {
     String sql = "DELETE FROM Users WHERE userID=?";
 

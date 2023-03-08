@@ -2,9 +2,12 @@ package com.MainApplication.Controller;
 
 import com.ProductManagement.Cart;
 import com.ProductManagement.ManageProduct;
+<<<<<<< HEAD
 import com.UserManagement.LoginAuthentication;
 import com.UserManagement.ManageEmployee;
 import com.UserManagement.User;
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,6 +35,7 @@ public class ProductController extends GridController implements Initializable {
   private GridPane horizonGrid;
   @FXML
   private Label cartStatus;
+<<<<<<< HEAD
 
   ManageEmployee manageEmployee = new ManageEmployee();
   private User user = manageEmployee.getUserByActive();
@@ -41,11 +45,19 @@ public class ProductController extends GridController implements Initializable {
 
   public ProductController() throws Exception {
     System.out.println(user.getUserID());
+=======
+  private SceneController sceneController = new SceneController();
+
+  public ProductController() throws Exception {
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
   }
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
   private void itemDisplay() {
     ArrayList<Product> products = product.readFromDB();
     int column = 0;

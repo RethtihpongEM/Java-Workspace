@@ -2,8 +2,11 @@ package com.MainApplication.Controller;
 
 import com.ProductManagement.Cart;
 import com.ProductManagement.Product;
+<<<<<<< HEAD
 import com.UserManagement.LoginAuthentication;
 import com.UserManagement.User;
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -22,8 +25,11 @@ public class GridController {
   private Label productPrice;
   private Product product;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
   public GridController() throws Exception {
 
   }
@@ -41,12 +47,20 @@ public class GridController {
 
   public void addCart(ActionEvent event) {
     try {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
       product = product.searchProduct(product.getPid());
       cartProduct = new Cart();
       cartProduct = cartProduct.searchProduct(product.getPid());
       if (cartProduct == null)
         throw new Exception("Null Product");
+<<<<<<< HEAD
+=======
+
+//      System.out.println("Seen: " + cartProduct.isSeen());
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
       cartProduct.setProductQty(1);
 //      System.out.println("[Grid Controller]");
 //      System.out.println("Seen: " + cartProduct.isSeen());
@@ -54,9 +68,13 @@ public class GridController {
       product.setPqty(product.getPqty() - 1);
       product.updateProduct(product.getPid(), product.getPqty());
       cartProduct.addToCart(product.getPid(), cartProduct.getProductName(), cartProduct.getProductPrice(), cartProduct.getProductQty());
+<<<<<<< HEAD
       cartProduct.updateCartItem(cartProduct.getProductID(), cartProduct.getProductQty());
       ProductController.setCartProduct(cartProduct);
 
+=======
+      ProductController.setCartProduct(cartProduct);
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
       sceneController.switchSceneButton(event, "product-view.fxml");
     } catch (Exception e) {
       System.out.println(e.getMessage());

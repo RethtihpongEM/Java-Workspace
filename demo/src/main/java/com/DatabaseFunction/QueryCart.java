@@ -58,18 +58,25 @@ public class QueryCart {
     }
   }
 
+<<<<<<< HEAD
   protected void deleteCart(int cartID) throws Exception {
+=======
+  protected void deleteFromCart(int cartID) throws Exception {
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
     String deleteStm = "delete from cartproducts where cartID = ?";
     st = connection.prepareStatement(deleteStm);
     st.setInt(1, cartID);
     st.executeUpdate();
   }
+<<<<<<< HEAD
   protected void deleteCartProduct(int productID) throws Exception{
     String deleteStm = "delete from cartproducts where productID = ?";
     st = connection.prepareStatement(deleteStm);
     st.setInt(1, productID);
     st.executeUpdate();
   }
+=======
+>>>>>>> 8e252276916278890926b7fe85a1b5bfd226a8eb
   protected void updateCartProduct(int productID, int productQty) throws SQLException {
     try{
       String updateStm = "update cartproducts set productQty = ? where productID = ?";
