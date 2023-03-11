@@ -15,15 +15,18 @@ public class Main {
       size2 = size1 + 1;
     }
   }
+
+  //100 = 2 ms
+  //1000 = 3 ms
+  //10000 = 38 ms
+  //100000 = 1390 ms
+  //1000000 = 3.14 mn
+
   public static void main(String[] args) {
-//    Scanner scanner = new Scanner(System.in);
-//    System.out.print("Enter size of the list: ");
-//    int input = scanner.nextInt();
-    int input = 10;
-    size = input;
+    size = 1000000;
     OriginalList originalList = new OriginalList(size);
     originalList.autoGenerateList(size);
-    originalList.displayList(size);
+//    originalList.displayList(size);
     long startTime = System.currentTimeMillis();
 
     //Seperate list
@@ -38,29 +41,29 @@ public class Main {
       secondSublist.setElement(i,originalList.getElement((size2-1)+i));
     }
 
-    System.out.print("List 1: ");
-    firstSublist.displayList();
-    System.out.println();
-    System.out.print("List 2: ");
-    secondSublist.displayList();
-    System.out.println();
+//    System.out.print("List 1: ");
+//    firstSublist.displayList();
+//    System.out.println();
+//    System.out.print("List 2: ");
+//    secondSublist.displayList();
+//    System.out.println();
 
     firstSublist.sort();
     secondSublist.sort();
 
-    System.out.print("Sorted List 1: ");
-    firstSublist.displayList();
-    System.out.println();
-    System.out.print("Sorted List 2: ");
-    secondSublist.displayList();
-    System.out.println();
+//    System.out.print("Sorted List 1: ");
+//    firstSublist.displayList();
+//    System.out.println();
+//    System.out.print("Sorted List 2: ");
+//    secondSublist.displayList();
+//    System.out.println();
 
     SortingThread sortingThread = new SortingThread(size);
     sortingThread.sortAndMerge(size1,size2,firstSublist.getSubList(),secondSublist.getSubList());
 
-    System.out.print("Sorted: ");
-    sortingThread.displayList();
-    System.out.println();
+//    System.out.print("Sorted: ");
+//    sortingThread.displayList();
+//    System.out.println();
 
     long endTime = System.currentTimeMillis();
     System.out.println(endTime-startTime + " = Milleseconds");

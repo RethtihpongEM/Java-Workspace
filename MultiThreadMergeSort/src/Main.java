@@ -1,6 +1,3 @@
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class Main {
   static int size1;
   static int size2;
@@ -19,11 +16,11 @@ public class Main {
 //    Scanner scanner = new Scanner(System.in);
 //    System.out.print("Enter size of the list: ");
 //    int input = scanner.nextInt();
-    int input = 2000000;
+    int input = 1000000;
     size = input;
     OriginalList originalList = new OriginalList(size);
     originalList.autoGenerateList(size);
-//    originalList.displayList(size);
+    originalList.displayList(size);
     long startTime = System.currentTimeMillis();
 
     //Seperate list
@@ -45,18 +42,10 @@ public class Main {
 //    secondSublist.displayList();
 //    System.out.println();
 
-//    firstSublist.sort();
-//    secondSublist.sort();
     firstSublist.start();
-//    firstSublist.join();
     secondSublist.start();
     secondSublist.join();
-//    Thread thread1 = new Thread();
-//    Thread thread2 = new Thread();
-//    thread1.start();
-//    thread1.join();
-//    thread2.start();
-//    thread2.join();
+
 
 //    System.out.print("Sorted List 1: ");
 //    firstSublist.displayList();
@@ -66,10 +55,6 @@ public class Main {
 //    System.out.println();
 
     SortingThread sortingThread = new SortingThread(size,size1,size2,firstSublist.getSubList(),secondSublist.getSubList());
-//    sortingThread.sortAndMerge();
-//      Thread thread3 = new Thread();
-//      thread3.join();
-//      thread3.start();
     sortingThread.start();
     sortingThread.join();
 //    System.out.print("Sorted: ");

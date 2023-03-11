@@ -18,6 +18,10 @@ public class Sublist {
     return subList;
   }
 
+  public int getElement(int i){
+    return subList[i];
+  }
+
   public void sort(){
     int temp;
     for (int i=0;i<this.size;i++){
@@ -29,6 +33,7 @@ public class Sublist {
         }
       }
     }
+
   }
 
 }

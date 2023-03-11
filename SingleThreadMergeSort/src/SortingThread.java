@@ -5,6 +5,8 @@ public class SortingThread {
     this.size=size;
     sortList = new int[size];
   }
+
+
   public void sortAndMerge(int size1,int size2,int[]array1,int[]array2){
     int i=0,j=0,k=0;
     while (i< size1 && j<size2){
