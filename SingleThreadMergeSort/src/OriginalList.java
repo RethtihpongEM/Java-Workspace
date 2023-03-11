@@ -7,10 +7,6 @@ public class OriginalList {
     this.size = size;
     list = new int[size];
   }
-  OriginalList(int size, int []array){
-    this.size = size;
-    list= array;
-  }
 
   public void displayList(int size){
     System.out.print("List = ");
